@@ -8,6 +8,8 @@ The CAD export keeps every part as a separate connected shell, so the script:
   5. writes meshes/ and dog.xml (dog alone) and ../dog_with_arm.xml (RoArm on the front plate).
 
 CAD frame (mm): x = lateral (x<0 is left), y = long axis (+y is front), z = up.
+Full_dog.stl is no longer in the working tree; restore it first with:
+  git checkout 72e3c33 -- hardware/Full_dog.stl
 Run from the repo root:  .venv/bin/python hardware/dog/build_dog.py
 """
 from pathlib import Path
