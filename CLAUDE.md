@@ -31,3 +31,23 @@ construction tasks (see README.md).
 - `dog_with_arm.xml` uses `angle="radian"`; angles in generated MJCF must be radians.
 - Leg masses, joint limits and motor gains in `build_dog.py` are estimates; arm actuators use
   kp=60 in `ro-arm.xml`.
+
+## Working with the user
+- Write requirements and plans **together**: one topic at a time, ask the few decisions that
+  matter, fold in the answers, explain the reasoning. Don't hand over a finished draft.
+
+## Current status and next steps
+Keep this section up to date at the end of each working session.
+
+As of 2026-11-26:
+- Done: arm model, articulated dog model, dog + arm scene (all viewable in MuJoCo);
+  control requirements draft v0.4.
+- Next, in order:
+  1. Arm pressure/contact sensing: servo load feedback vs a force sensor at the gripper,
+     and what force precision each task needs (plastering = hold a steady force,
+     tiling = detect contact). Not yet decided.
+  2. Interface spec: iceoryx2 services, message types, rates, mode state machine.
+  3. Milestones M1–M6 (plumbing → stand → walk → arm → safety → first Rust process), then tickets.
+- Still unknown: the PPO policy's observation/action definition (in the user's training code,
+  not in this repo), CAN adapter and bus count, Pi model, BNO055 I²C vs UART, camera model.
+- The Jira MCP server needs Docker, which isn't installed; tickets go in a markdown file for now.
